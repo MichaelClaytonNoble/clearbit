@@ -1,4 +1,3 @@
-
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -12,5 +11,5 @@ const SubjectSchema = new Schema({
   }
 });
 
-const Subject = mongoose.model('subject', SubjectSchema); 
+const Subject = mongoose.model('subjects', SubjectSchema); 
 module.exports = Subject; 

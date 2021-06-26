@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const SubjectSchema = new Schema({
+const SignatureSchema = new Schema({
   content: {
     type: String,
     required: true
@@ -12,5 +12,5 @@ const SubjectSchema = new Schema({
   }
 });
 
-const Subject = mongoose.model('subject', SubjectSchema); 
-module.exports = Subject; 
+const Signature = mongoose.model('signature', SignatureSchema); 
+module.exports = Signature; 
