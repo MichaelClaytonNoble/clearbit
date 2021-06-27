@@ -18,6 +18,23 @@ app.listen(port, ()=> console.log(`Server is running on port ${port}`));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
-const subject = require("./routes/api/subject");
+const subject = require("./routes/api/subject")
+const greeting = require("./routes/api/greeting")
+const body = require("./routes/api/body")
+const callToAction = require("./routes/api/callToAction")
+const attachedResume = require("./routes/api/attachedResume")
+const signature = require("./routes/api/signature")
+const jdAnalysis = require("./routes/api/jdAnalysis")
+const templates = require("./routes/api/templates")
+
 app.use('/api/subject', subject); 
+app.use('/api/greeting', greeting); 
+app.use('/api/body', body); 
+app.use('/api/callToAction', callToAction); 
+app.use('/api/attachedResume', attachedResume); 
+app.use('/api/signature', signature); 
+app.use('/api/jdAnalysis', jdAnalysis); 
+app.use('/api/templates', templates); 
+
+
 

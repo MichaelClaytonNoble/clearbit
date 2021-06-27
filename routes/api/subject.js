@@ -1,6 +1,6 @@
 
-//import validations and validate the input 
-// const validateSubject = require('../../validations/email');
+
+const validateEmailSection = require('../../validations/email');
 
 const express = require("express"); 
 const router = express.Router(); 
@@ -13,21 +13,24 @@ router.get("/subjects", (req, res) => {
 
 });
 
-router.post("/newSubject",(req, res) => { // const { isValid, errors } = validateSubject(req.body);
-  // if( !isValid) {
-  //   return res.status(b400).json(errors);
-  // }
+router.post("/newSubject",(req, res) => { 
+
+  const { isValid, errors } = validateEmailSection(req.body, "subject");
+
+  if( !isValid) {
+    return res.status(400).json(errors);
+  }
   
   let subject = new Subject({
-    content: 'oeuoeuoeu',
+    content: req.body.content,
     variable: "s1"
   });
 
 
-  console.log(req)
-  console.log("query:", req.query);
-  console.log("body:", req.body); 
-  console.log("headers: ", req.headers);
+  console.log(isValid);
+  // console.log("query:", req.query);
+  // console.log("body:", req.body); 
+  // console.log("headers: ", req.headers);
 
 
   subject.save()
